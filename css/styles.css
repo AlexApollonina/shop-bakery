@@ -96,6 +96,14 @@ address {
   padding: 0 24px;
 }
 /* Header */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 32px;
+}
+
 .header-container {
   display: flex;
   align-items: center;
@@ -117,6 +125,8 @@ address {
   color: var(--color-primary-light);
   line-height: 1.5;
   text-decoration: none;
+  transition: color 0.2s;
+  cursor: pointer;
 }
 
 .menu-item:hover {
@@ -129,8 +139,9 @@ address {
   background-color: var(--color-brand-light);
   border: 2px solid var(--color-brand-light);
   border-radius: 8px;
-  cursor: pointer;
   font-weight: 600;
+  transition: background-color 0.2s, color 0.2s;
+  cursor: pointer;
 }
 .button-cta:hover {
   color: var(--color-brand-dark);
@@ -139,7 +150,13 @@ address {
 /* Hero section */
 .hero-section {
   padding: 272px 0;
-  background-image: url('../images/hero-section-background.jpg');
+  background-image: linear-gradient(
+      102.76deg,
+      rgba(18, 18, 17, 0.78) 2.03%,
+      rgba(18, 18, 17, 0.6) 58.46%,
+      rgba(18, 18, 17, 0) 90.36%
+    ),
+    url('../images/hero-section-background.jpg');
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
@@ -274,14 +291,17 @@ address {
 .formats-title {
   margin-bottom: 80px;
 }
+
 .formats-list {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
+
 .formats-item {
   flex-basis: calc((100% - 40px) / 3);
 }
+
 .format-card {
   height: 444px;
   padding: 24px;
@@ -294,7 +314,13 @@ address {
   );
   border: 2px solid var(--color-brand-dark);
   border-radius: 16px;
+  transition: transform 0.3s;
 }
+
+.format-card:hover {
+  transform: scale(1.05);
+}
+
 .format-title {
   color: var(--color-primary-light);
   font-size: 24px;
@@ -326,6 +352,7 @@ address {
   background-color: transparent;
   fill: var(--color-primary-dark);
   border: 1px solid var(--color-primary-dark);
+  transition: background-color 0.3s, fill 0.3s;
   cursor: pointer;
 }
 
@@ -334,6 +361,9 @@ address {
   fill: var(--color-primary-light);
 }
 
+.slider-button.next {
+  transform: rotate(180deg);
+}
 /* Contact section */
 .section-contacts {
   padding-bottom: 96px;
@@ -436,10 +466,12 @@ address {
   left: 0;
   right: 0;
   bottom: 0;
+  padding: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgba(49, 38, 26, 0.4);
+  transition: opacity 0.3s, visibility 0.3s;
 }
 
 .backdrop.is-hidden {
@@ -450,8 +482,10 @@ address {
 
 .modal {
   position: relative;
-  width: 880px;
-  height: 880px;
+  width: 100%;
+  max-width: 880px;
+  height: 100%;
+  max-height: 880px;
   background-color: var(--color-primary-light);
   border-radius: 32px;
 }
