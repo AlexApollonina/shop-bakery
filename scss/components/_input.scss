@@ -1,0 +1,25 @@
+.input {
+  &__label {
+    display: block;
+  }
+
+  &__control {
+    padding: 16px 42px;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid var(--color-secondary-brown);
+    border-radius: 8px;
+    &:focus {
+      border-color: var(--color-brand-light);
+      outline: none;
+    }
+    &::placeholder {
+      color: var(--color-secondary-brown);
+      font-size: 16px;
+      line-height: 1.18;
+    }
+    &:focus::placeholder {
+      color: var(--color-primary-dark);
+    }
+  }
+}
